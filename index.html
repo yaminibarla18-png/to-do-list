@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Your Tasks</h2>
+
+<a href="/add">Add Task</a> |
+<a href="/logout">Logout</a>
+
+<ul>
+{% for task in tasks %}
+<li>
+    {{ task[2] }}
+
+    {% if task[3] == 0 %}
+    <a href="/complete/{{ task[0] }}">✔</a>
+    {% endif %}
+
+    <a href="/delete/{{ task[0] }}">✖</a>
+</li>
+{% endfor %}
+</ul>
+
+</body>
+</html>
